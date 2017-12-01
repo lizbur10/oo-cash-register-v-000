@@ -24,7 +24,7 @@ class CashRegister
       # if self.total % 100 == 0
       #   "After the discount, the total comes to $#{self.total.to_i}."
       # else
-        "After the discount, the total comes to $#{self.total.round(2)}."
+        "After the discount, the total comes to $#{self.total}."
       # end
     else
       "There is no discount to apply."
@@ -39,7 +39,8 @@ class CashRegister
 end
 
 
-cash_register_with_discount = CashRegister.new(20)
+cash_register = CashRegister.new(20)
+cash_register.add_item("macbook air", 1000)
 cash_register_with_discount.add_item("eggs", 0.98)
 cash_register_with_discount.add_item("book", 5.00, 3)
 cash_register_with_discount.add_item("Lucky Charms", 4.5)
