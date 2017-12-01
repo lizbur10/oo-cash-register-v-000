@@ -21,7 +21,7 @@ class CashRegister
   def apply_discount
     if (self.discount > 0)
       self.total = ( self.total *= (100 - self.discount)/100 )
-      self.total % 100 == 0 ? self.total = self.total.to_i : self.total = self.total.round!(2)
+      self.total % 100 == 0 ? self.total = self.total.to_i : self.total = self.total.round(2)
         "After the discount, the total comes to $#{self.total}."
     else
       "There is no discount to apply."
