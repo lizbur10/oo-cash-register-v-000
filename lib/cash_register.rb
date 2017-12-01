@@ -21,17 +21,25 @@ class CashRegister
   def apply_discount
     if (self.discount > 0)
       self.total = ( self.total *= (100 - self.discount)/100 )
-      self.total % 100 == 0 ? self.total = self.total.to_i : self.total.round(2)
-      "After the discount, the total comes to $#{self.total}."
+      # if self.total % 100 == 0
+      #   "After the discount, the total comes to $#{self.total.to_i}."
+      # else
+        "After the discount, the total comes to $#{self.total.round(2)}."
+      # end
     else
       "There is no discount to apply."
     end
   end
 
-  #!!!!!!!!! NEED TO SET THIS UP TO DEAL WITH DISCOUNT???????  #
   def void_last_transaction
     self.items.delete_at(self.items.length-1)
     self.total -= self.last_transaction[1]*self.last_transaction[2]
   end
 
 end
+
+
+cash_register_with_discount = CashRegister.new(20)
+cash_register_with_discount.add_item("eggs", 0.98)
+cash_register_with_discount.add_item("book", 5.00, 3)
+cash_register_with_discount.add_item("Lucky Charms", 4.5)
