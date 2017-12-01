@@ -37,10 +37,3 @@ class CashRegister
   end
 
 end
-
-
-cash_register = CashRegister.new(20)
-cash_register.add_item("macbook air", 1000)
-cash_register_with_discount.add_item("eggs", 0.98)
-cash_register_with_discount.add_item("book", 5.00, 3)
-cash_register_with_discount.add_item("Lucky Charms", 4.5)
